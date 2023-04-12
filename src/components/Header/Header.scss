@@ -1,0 +1,50 @@
+// Header.scss
+
+@import '../../styles/variables'; 
+@import '../../styles/mixins'; 
+
+.head {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 20px;   
+    flex-wrap: nowrap;
+    transform: translateY(-50%);
+    
+    &-overall {
+        position: relative;
+        width: -moz-available;
+        width: -webkit-fill-available;
+        padding: 20px;
+        @include desktop-breakpoint {
+            padding: 40px 20px;
+        }
+        img {
+            width: auto;
+            height: 42px;
+            @include desktop-breakpoint {
+                height: 62px;
+            }
+        }
+    }
+}
+
+.nav-link {
+    margin-left: 10px;
+    color: $primary-color;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 142.6%;
+    text-transform: uppercase;
+    text-decoration: none;
+    @include desktop-breakpoint {
+        margin-left: 57px;
+        font-size: 24px;
+        text-transform: capitalize;
+    }
+}
+
+.nav-active {
+    text-decoration: underline;
+}
+

@@ -1,0 +1,61 @@
+@import './styles/variables';
+@import './styles/mixins'; 
+
+//Typography for the project
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@mixin main-font {
+	font-family: 'Montserrat', sans-serif;
+	font-size: map-get($typography-size, mobile);
+	@include desktop-breakpoint {
+		font-size: map-get($typography-size, desktop);
+	}
+}
+
+@mixin title-font {
+	font-family: 'Montserrat', sans-serif;
+}
+
+html {
+	@include main-font;
+}
+
+h1 {
+	@include title-font;
+}
+
+//THE GENERAL STYLE
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+a {
+	color: $primary-color;
+	text-decoration: none;
+	&:hover {
+		color: $primary-color;
+		text-decoration: underline;
+	}
+}
+
+header,
+section {
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	@include desktop-breakpoint {
+		max-width: 1240px;
+		min-height: unset;
+		margin: 0 auto;
+		width: stretch;
+	}
+}

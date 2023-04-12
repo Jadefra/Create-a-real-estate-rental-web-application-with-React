@@ -1,0 +1,12 @@
+// _mixins.scss
+@import 'variables';
+
+@mixin desktop-breakpoint {
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+      @content;
+    }
+  }
+
+
+  
+
