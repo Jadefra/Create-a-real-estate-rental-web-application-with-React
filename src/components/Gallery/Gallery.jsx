@@ -4,8 +4,8 @@ import { useFetch } from './hooks/useFetch';
 import Logement from './Logement';
 
 function Gallery() {
-  const { isLoading, data: accommodationsData, error } = useFetch(
-    process.env.PUBLIC_URL + '/accommodation.json'
+  const { isLoading, data: logementsData, error } = useFetch(
+    process.env.PUBLIC_URL + '/logements.json'
   );
 
   if (isLoading) {
@@ -18,8 +18,8 @@ function Gallery() {
 
   return (
     <div className="gallery">
-      {accommodationsData.map((accommodation) => (
-        <Logement key={accommodation.id} data={accommodation} />
+      {logementsData.map((logements) => (
+        <Logement key={logements.id} data={logements} />
       ))}
     </div>
   );
