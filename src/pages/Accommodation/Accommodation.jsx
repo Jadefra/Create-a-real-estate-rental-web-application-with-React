@@ -1,18 +1,19 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useFetch } from '../hooks/useFetch';
-import LoadingScreen from '../components/LoadingScreen';
-import Error from '../components/Error';
-import Error404 from '../components/Error404';
-import Gallery from '../components/Gallery';
-import Tag from '../components/Tag';
-import Rating from '../components/Rating';
-import Collapse from '../components/Collapse';
+import { useFetch } from '../../hooks/useFetch';
 
+import LoadingScreen from '../../components/LoadingScreen/LoadingScreen';
+import AllErrors from '../../components/AllErrors/AllErrors';
+import Error404 from '../../pages/Error404/Error404';
+
+import Carrousel from '../../components/Carrousel/Carrousel';
+import Tag from '../../components/Tag/Tag';
+import Rating from '../../components/Rate/Rate';
+import Collapse from '../../components/Dropdown/Dropdown';
 
 function Accommodation() {
   // Get data from logements.json
-  const logements = useFetch(window.location.origin + '/Kasa/logements.json');
+  const logements = useFetch(process.env.PUBLIC_URL + '/logements.json');
 
   // Get ad id from URL
   const { accommodationId } = useParams();
@@ -24,16 +25,16 @@ function Accommodation() {
   }
 
   // If the data is loading, a loading screen will appear
-  if (logements.loading) {
+  if (logements.isLoading) {
     return <LoadingScreen />;
   }
 
-  // If there is an error the Error component
+  // If there is an error, the AllErrors component is displayed
   if (logements.error) {
-    return <Error />;
+    return <AllErrors />;
   }
 
-  // If the ad does not exist, the Error404 component
+  // If the ad does not exist, the Error404 component is displayed
   if (!thisAccommodation) {
     return <Error404 />;
   } else {
@@ -43,9 +44,9 @@ function Accommodation() {
     document.title = thisAccommodation.title + ' - Kasa';
     return (
       <section>
-        <Gallery images={thisAccommodation.pictures} />
-        <div className="Detailed-description-set">
-          <div className="Title-Description-Host-Rate-set">
+        <Carrousel images={thisAccommodation.pictures} />
+        <div className="set-host-rating-detail-accommodation">
+          <div className="set-detail-accommodation-title-host-rate">
             <h1 className="accommodation-title">{thisAccommodation.title}</h1>
             <p className="accommodation-location">{thisAccommodation.location}</p>
             <div className="tag-set">
@@ -62,19 +63,20 @@ function Accommodation() {
                 <br />
                 {lastName}
               </div>
-              <img className="host-photo" src={thisAccommodation.host.photo} alt="Host_photo" />
+              <img className="host-picture" src={thisAccommodation.host.picture} alt="Host_photo" />
             </div>
           </div>
         </div>
         <div className="set-description-equipments">
           <Collapse title="Description" content={thisAccommodation.description} />
-          <Collapse title="Equipements" content={thisAccommodation.equipments} />
+          <Collapse title="Equipments" content={thisAccommodation.equipments} />
         </div>
       </section>
     );
   }
 }
 export default Accommodation;
+
 
 
 

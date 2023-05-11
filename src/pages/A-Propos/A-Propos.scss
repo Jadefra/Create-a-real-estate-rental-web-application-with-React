@@ -1,0 +1,14 @@
+@import '../../styles/mixins';
+
+.apropos {
+    &-banner {
+        @include banner-style;
+    }
+    &-section {
+        padding-bottom: 80px;
+    }
+}
+
+
+  
+  

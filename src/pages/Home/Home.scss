@@ -3,26 +3,6 @@
 @import '../../styles/variables';
 @import '../../styles/mixins'; 
 
-
-/*height: 223px;
-width: 1240px;
-left: 100px;
-top: 171px;
-
-height: 68px;
-width: 705px;
-left: 373px;
-top: 249px;
-
-font-family: Montserrat;
-font-size: 48px;
-font-weight: 500;
-line-height: 68px;
-letter-spacing: 0em;
-text-align: left;
-
-
-*/
 .banner {
     position: relative;
 	margin: 0 auto;
@@ -58,4 +38,29 @@ text-align: left;
         }
     }
 }
+.home {
+	@include desktop-breakpoint {
+		padding-bottom: 43px;
+	}
+}
 
+.thumb-whole{
+    @include desktop-breakpoint {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        margin: 0 auto;
+        padding-top: 56px;
+        padding-bottom: 0;
+        row-gap: 50px;
+        border-radius: 25px;
+        background: #f7f7f7;
+    }
+}
+
+.fill-space {
+    @include desktop-breakpoint {
+		width: 340px;
+		height: 0;
+	}
+}

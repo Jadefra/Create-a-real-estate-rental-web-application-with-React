@@ -1,0 +1,64 @@
+@import '../../styles/variables'; 
+@import '../../styles/mixins'; 
+
+.carrousel,
+.image {
+    height: 255px;
+    @include desktop-breakpoint {
+		height: 415px;
+	}
+}
+
+.carrousel {
+    position: relative;
+}
+
+.image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.left-vector,
+.right-vector {
+    z-index: 1;
+    position: relative;
+    top: 50%;
+    width: 12px;
+    height: 22px;
+    cursor: pointer;
+    color: #fff;
+    @include desktop-breakpoint {
+		top: 156px;
+		width: 46px;
+		height: 80px;
+	}
+}
+
+.left-vector {
+    left: 5px;
+    @include desktop-breakpoint {
+		left: 24px;
+	}
+}
+
+.right-vector {
+    right: 5px;
+    transform: rotate(180deg);
+    @include desktop-breakpoint {
+		right: 24px;
+	}
+}
+
+.slide {
+    transform: scale(0.88);
+    opacity: 0;
+    transition-duration: 1s;
+    &.active {
+        width: 100%;
+        transform: scale(1);
+        opacity: 1;
+        transition-duration: 1s;
+    }
+}
+

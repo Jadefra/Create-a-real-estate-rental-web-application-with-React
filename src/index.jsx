@@ -1,17 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './globalStyles.scss';
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App'
 
 
-ReactDOM.createRoot(
-  document.getElementById('root')
-).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import './globalStyles.scss'
 
+const container = document.getElementById('root')
+const root = createRoot(container)
+
+/*Rendering the App component in the root element of the index.html file*/
+root.render(<App />)
 
 
 
