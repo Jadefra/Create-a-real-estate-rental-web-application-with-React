@@ -10,7 +10,7 @@ function AllErrors404() {
     return (
         <AllErrors
             title="404"
-            subtitle="Oups! La page que"
+            subtitle="Oups! La page que "
             subtitle2="vous demandez n'existe pas"
         />
     );
