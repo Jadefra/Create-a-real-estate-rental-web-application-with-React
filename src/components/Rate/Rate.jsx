@@ -7,6 +7,11 @@ function Rate({ rate }) {
   const starSum = parseInt(rate);
   const emptyStars = globalStar - starSum;
 
+  // check if starSum and emptyStars are numbers
+  if (isNaN(starSum) || isNaN(emptyStars)) {
+    return null;
+  }
+
   return (
     <div className="rate-overall">
       {/*Return full stars quantity*/}
@@ -30,5 +35,6 @@ function Rate({ rate }) {
     </div>
   );
 }
+
 
 export default Rate;
