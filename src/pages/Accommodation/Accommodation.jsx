@@ -21,7 +21,7 @@ function Accommodation() {
   // Search for the ad with the identifier found in the URL
   let thisAccommodation;
   if (logements.data) {
-    thisAccommodation = logements.data.find((accommodation) => accommodation.id === accommodationId);
+    thisAccommodation = logements.data.find((accommodation) => accommodation.id.toString() === accommodationId);
   }
 
   // If the data is loading, a loading screen will appear
@@ -37,45 +37,55 @@ function Accommodation() {
   // If the ad does not exist, the Error404 component is displayed
   if (!thisAccommodation) {
     return <Error404 />;
-  } else {
-    // Decompose the host name into firstName and lastName
-    const [firstName, lastName] = thisAccommodation.host.name.split(' ');
-    // Set page title
-    document.title = thisAccommodation.title + ' - Kasa';
-    return (
-      <section>
-        <Carrousel images={thisAccommodation.pictures} />
-        <div className="set-host-rating-detail-accommodation">
-          <div className="set-detail-accommodation-title-host-rate">
-            <h1 className="accommodation-title">{thisAccommodation.title}</h1>
-            <p className="accommodation-location">{thisAccommodation.location}</p>
-            <div className="tag-set">
-              {thisAccommodation.tags.map((tag, index) => (
-                <Tag tagName={tag} key={`${tag}-${index}`} />
-              ))}
-            </div>
-          </div>
-          <div className="set-host-rating">
-            <Rating rating={thisAccommodation.rating} />
-            <div className="set-host">
-              <div className="host-name">
-                {firstName}
-                <br />
-                {lastName}
-              </div>
-              <img className="host-picture" src={thisAccommodation.host.picture} alt="Host_photo" />
-            </div>
-          </div>
-        </div>
-        <div className="set-description-equipments">
-          <Collapse title="Description" content={thisAccommodation.description} />
-          <Collapse title="Equipments" content={thisAccommodation.equipments} />
-        </div>
-      </section>
-    );
   }
+
+  // Decompose the host name into firstName and lastName
+  let firstName, lastName;
+  if (thisAccommodation.host && thisAccommodation.host.name) {
+    [firstName, lastName] = thisAccommodation.host.name.split(' ');
+  }
+
+  // Set page title
+  document.title = thisAccommodation.title + ' - Kasa';
+
+  // Return the rest of your component here
+  return (
+    <section className="accommodation">
+      <Carrousel images={thisAccommodation.pictures} />
+      <div className="set-host-rating-detail-accommodation">
+        <div className="set-detail-accommodation-title-host-rate">
+          <h1 className="accommodation-title">{thisAccommodation.title}</h1>
+          <p className="accommodation-location">{thisAccommodation.location}</p>
+          <div className="tag-set">
+            {thisAccommodation.tags.map((tag, index) => (
+              <Tag tagName={tag} key={`${tag}-${index}`} />
+            ))}
+          </div>
+        </div>
+        <div className="set-host-rating">
+          <Rating rating={thisAccommodation.rating} />
+          <div className="set-host">
+            <div className="host-name">
+              {firstName}
+              <br />
+              {lastName}
+            </div>
+            <img className="host-picture" src={thisAccommodation.host && thisAccommodation.host.picture} alt="Host_photo" />
+          </div>
+        </div>
+      </div>
+      <div className="set-description-equipments">
+        <Collapse title="Description" content={thisAccommodation.description} />
+        <Collapse title="Equipments" content={thisAccommodation.equipments} />
+      </div>
+    </section>
+  );
 }
+
 export default Accommodation;
+
+
+
 
 
 
