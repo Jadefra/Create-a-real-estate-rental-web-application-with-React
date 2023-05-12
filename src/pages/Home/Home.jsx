@@ -36,17 +36,18 @@ function Home() {
       {logements.data && (
         <div className="thumb-whole">
           {logements.data.map((logement) => (
-            <Thumb
-              key={logement.id}
-              link={`/logements/${logement.id}`}
-              title={logement.title}
-              cover={logement.cover}
-            />
-          ))}
-          <div className="fill-space"></div>
-          <div className="fill-space"></div>
-        </div>
+          <Thumb
+            key={logement.id}
+            link={`/accommodation/${logement.id}`}  // Change this line
+            title={logement.title}
+            cover={logement.cover}
+          />
+        ))}
+        <div className="fill-space"></div>
+        <div className="fill-space"></div>
+      </div>
       )}
+
     </section>
   );
 }
