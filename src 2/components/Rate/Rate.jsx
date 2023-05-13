@@ -1,10 +1,11 @@
 import React from 'react'; 
-import star from '../../assets/images/star.svg';
+import starEmpty from '../../assets/images/star_empty.svg';
+import starFull from '../../assets/images/star_full.svg'; // assurez-vous que c'est la bonne image
 import './Rate.scss'; 
 
-function Rate({ rate }) {
+function Rate({ rating }) {
   const globalStar = 5;
-  const starSum = parseInt(rate);
+  const starSum = parseInt(rating);
   const emptyStars = globalStar - starSum;
 
   // check if starSum and emptyStars are numbers
@@ -19,8 +20,8 @@ function Rate({ rate }) {
         <img
           className="star"
           key={'full-star-' + i}
-          src={star}
-          alt="The rating with the stars filled in"
+          src={starFull} // utilise l'image de l'étoile pleine
+          alt="Full star"
         />
       ))}
       {/*Return the amount of empty stars*/}
@@ -28,13 +29,15 @@ function Rate({ rate }) {
         <img
           className="star-empty"
           key={'empty-star-' + i}
-          src={star}
-          alt="The note with the empty stars"
+          src={starEmpty} // utilise l'image de l'étoile vide
+          alt="Empty star"
         />
       ))}
     </div>
   );
 }
 
-
 export default Rate;
+
+
+
