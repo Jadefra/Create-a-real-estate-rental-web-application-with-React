@@ -6,36 +6,46 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        gap: 20px; // Ajout d'un espace entre les éléments
 
         .title-rating-host-set {
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
             width: 100%;
 
+            @include desktop-breakpoint {
+                flex-direction: row; 
+            }
+
             .title-tag-set {
-                h1.accommodation-title {
-                    margin-top: 15px;
-                    margin-bottom: 0;
-                    color: $primary-color;
-                    font-size: 18px;
-                    font-weight: 500;
-                    line-height: 139,9%;
-                    @include desktop-breakpoint {
-                        font-size: 36px;
+                h1 {
+                    &.accommodation-title {
+                        margin-top: 15px;
+                        margin-bottom: 0;
+                        color: $primary-color;
+                        font-size: 18px;
+                        font-weight: 500;
+                        line-height: 139,9%;
+                        @include desktop-breakpoint {
+                            font-size: 36px;
+                        }
                     }
                 }
 
-                p.accommodation-location {
-                    margin-top: 5px;
-                    margin-bottom: 0;
-                    color: $primary-color;
-                    font-size: 14px;
-                    font-weight: 500;
-                    line-height: 139,9%;
+                p {
+                    &.accommodation-location {
+                        margin-top: 5px;
+                        margin-bottom: 0;
+                        color: $primary-color;
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 139,9%;
 
-                    @include desktop-breakpoint {
-                        margin-bottom: 20px;
-                        font-size: 18px;
+                        @include desktop-breakpoint {
+                            margin-bottom: 20px;
+                            font-size: 18px;
+                        }
                     }
                 }
 
@@ -47,13 +57,25 @@
 
             .host-rating-set {
                 display: flex;
-                flex-direction: column;
-                align-items: flex-end;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+
+                @include desktop-breakpoint {
+                    flex-direction: column; 
+                    align-items: flex-end;
+                }
 
                 .host-set {
                     display: flex;
                     align-items: center;
-                    margin-top: 20px;
+                    margin-top: 15px;
+                    margin-bottom: auto;
+
+                    @include desktop-breakpoint {
+                        margin-top: 20px;
+                        margin-bottom: 0;
+                    }
 
                     .host-name {
                         margin-right: 12px;
@@ -82,46 +104,48 @@
                 }
 
                 .rating-set {
+                    align-self: flex-start;
                     margin-top: 20px;
 
                     @include desktop-breakpoint {
-                        align-self: flex-start;
+                        margin-top: 0;
+                        align-self: flex-end;
                     }
                 }
             }
         }
 
         .set-description-equipments {
+            display: flex;
+            flex-direction: column;
+
             @include desktop-breakpoint {
-                display: flex;
-                justify-content: space-between;
+                display: grid;
+                grid-template-columns: 1fr 1fr; 
+                gap: 20px; 
             }
 
-            .collapse {
+            .dropdown-section {
+                width: 100%;
+
                 @include desktop-breakpoint {
-                    border-radius: 10px; 
+                    padding: 0;
+                    width: auto;
                 }
-
-                &-section {
-                    @include desktop-breakpoint {
-                        width: 46%;
-                        padding: 0;
-                    }
-                }
-
-                &-title {
+                
+                .dropdown {
                     @include desktop-breakpoint {
                         font-size: 18px; 
                     }
                 }
 
-                &-icon {
+                .dropdown-icon {
                     @include desktop-breakpoint {
                         margin-right: 12px; 
                     }
                 }
 
-                &-text {
+                .dropdown-text {
                     @include desktop-breakpoint {
                         padding-top: 30px;
                         padding-right: 20px;
@@ -137,8 +161,22 @@
 
 
 
+
+
+   
+
+
+
+
+
+
+
+
+
   
+ 
 
 
 
 
+    

@@ -9,7 +9,7 @@ import Error404 from '../../pages/Error404/Error404';
 import Carrousel from '../../components/Carrousel/Carrousel';
 import Tag from '../../components/Tag/Tag';
 import Rating from '../../components/Rate/Rate';
-import Collapse from '../../components/Dropdown/Dropdown';
+import Dropdown from '../../components/Dropdown/Dropdown';
 
 import './Accommodation.scss';
 
@@ -64,8 +64,8 @@ function Accommodation() {
             </div>
           </div>
           <div className="set-description-equipments">
-            <Collapse title="Description" content={thisAccommodation.description} />
-            <Collapse title="Equipments" content={thisAccommodation.equipments} />
+            <Dropdown title="Description" content={thisAccommodation.description} />
+            <Dropdown title="Equipements" content={thisAccommodation.equipments} />
           </div>
         </div>
       </section>
