@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 import Vector from '../../assets/images/Vector.svg';
 
@@ -7,22 +7,12 @@ import './Dropdown.scss';
 function Dropdown({ title, content }) {
   // The initial state
   const [dropActive, setDropActive] = useState('');
-  // The initial height at 0px
-  const [dropHeight, setDropHeight] = useState('0px');
   // The initial state of the rotation class
   const [dropRotate, setDropRotate] = useState('dropdown-icon');
-
-  // This is used to get the content height
-  const contentDropdown = useRef(null);
 
   // The toggle function: the dropdown by changing active state, height state and rotation state
   const openDropdown = () => {
     setDropActive(dropActive === '' ? 'active' : '');
-    setDropHeight(
-      dropActive === 'active'
-        ? '0px'
-        : `${contentDropdown.current.scrollHeight}px`
-    );
     setDropRotate(
       dropActive === 'active' ? 'dropdown-icon' : 'dropdown-icon rotate'
     );
@@ -47,11 +37,7 @@ function Dropdown({ title, content }) {
         <span className="dropdown-title">{title}</span>
         <img src={Vector} className={`${dropRotate}`} alt="Toggle" />
       </button>
-      <div
-        ref={contentDropdown}
-        style={{ maxHeight: `${dropHeight}` }}
-        className="dropdown-content"
-      >
+      <div className={`dropdown-content ${dropActive}`}>
         <div className="dropdown-text">
           {contentArray.map((contentItem, index) => (
             <div key={`${contentItem}-${index}`}>{contentItem}</div>
@@ -63,5 +49,6 @@ function Dropdown({ title, content }) {
 }
 
 export default Dropdown;
+
 
 

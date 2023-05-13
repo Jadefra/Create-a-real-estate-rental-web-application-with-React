@@ -11,29 +11,35 @@
     background-color: $primary-color;
     cursor: pointer;
     transition: background-color 0.6s ease;
+
     @include desktop-breakpoint {
 		height: 47px;
 		padding-left: 18px;
 	}
+
     &-section {
         display: flex;
         flex-direction: column;
         margin-bottom: 20px;
+
         @include desktop-breakpoint {
 			margin-bottom: 31px;
 			padding-right: 108px;
 			padding-left: 108px;
 		}
     }
+
     &-title {
 		color: #ffffff;
 		font-size: 13px;
 		font-weight: 200;
 		line-height: 143%;
+
 		@include desktop-breakpoint {
 			font-size: 24px;
 		}
 	}
+
     &-icon {
         width: 18px;
         height: 18px;
@@ -42,16 +48,24 @@
         transition: -webkit-transform 0.6s ease;
         transition: transform 0.6s ease;
         color: #fff, 1;
+
         @include desktop-breakpoint {
 			width: 23px;
 			height: 14px;
 			margin-right: 32px;
 		}
     }
+
     &-content {
         overflow: hidden;
+        max-height: 0;
         transition: max-height 0.6s ease;
+        
+        &.active {
+            max-height: none;
+        }
     }
+
     &-text {
         padding-top: 18px;
         padding-right: 6px;
@@ -61,6 +75,7 @@
         color: $primary-color;
         font-size: 12px;
         line-height: 143%;
+
         @include desktop-breakpoint {
 			padding-top: 36px;
 			padding-right: 27px;
