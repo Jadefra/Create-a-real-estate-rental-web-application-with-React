@@ -1,64 +1,78 @@
 @import '../../styles/variables'; 
 @import '../../styles/mixins'; 
 
-.carrousel,
-.image {
-    height: 255px;
-    @include desktop-breakpoint {
-		height: 415px;
-	}
-}
-
 .carrousel {
+    &,
+    &__image {
+        height: 255px;
+        @include desktop-breakpoint {
+            height: 415px;
+        }
+    }
+
     position: relative;
-}
 
-.image {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.left-vector,
-.right-vector {
-    z-index: 1;
-    position: absolute;  /* Change this line */
-    top: 50%;
-    width: 12px;
-    height: 22px;
-    cursor: pointer;
-    @include desktop-breakpoint {
-		top: 156px;
-		width: 46px;
-		height: 80px;
-	}
-}
-
-.left-vector {
-    left: 5px;
-    @include desktop-breakpoint {
-		left: 24px;
-	}
-}
-
-.right-vector {
-    right: 5px;
-    transform: rotate(180deg);
-    @include desktop-breakpoint {
-		right: 24px;
-	}
-}
-
-
-.slide {
-    transform: scale(0.88);
-    opacity: 0;
-    transition-duration: 1s;
-    &.active {
+    &__image {
         width: 100%;
-        transform: scale(1);
-        opacity: 1;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    &__vector {
+        &--left,
+        &--right {
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            width: 12px;
+            height: 22px;
+            cursor: pointer;
+
+            @include desktop-breakpoint {
+                top: 156px;
+                width: 46px;
+                height: 80px;
+            }
+        }
+
+        &--left {
+            left: 5px;
+
+            @include desktop-breakpoint {
+                left: 24px;
+            }
+        }
+
+        &--right {
+            right: 5px;
+            transform: rotate(180deg);
+
+            @include desktop-breakpoint {
+                right: 24px;
+            }
+        }
+    }
+
+    &__slide {
+        transform: scale(0.88);
+        opacity: 0;
         transition-duration: 1s;
+
+        &--active {
+            width: 100%;
+            transform: scale(1);
+            opacity: 1;
+            transition-duration: 1s;
+        }
+    }
+    .slide-counter{
+        position: absolute;
+        color: white;
+        border-radius: 0 0 0 1rem;
+        width: 100%;
+        bottom: 1rem;
+        text-align: center;
     }
 }
+
 

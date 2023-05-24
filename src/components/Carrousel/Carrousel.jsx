@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import sliderVector from '../../assets/images/sliderVector.svg';
 import './Carrousel.scss';
 
-function Carrousel({ images }) {
+function Carrousel({ images }) { 
+  // Receives an array with the URLs of the images.
   // This is a React Hook that creates a state variable called "current" and sets it to 0. It
   // creates a function called `setCurrent` which takes a parameter called `value` and sets the
   // `current` state variable to the passed value.
-  const [current, setCurrent] = useState(0);
-  const length = images.length;
+  const [current, setCurrent] = useState(0); // Counter variable initially set to 0
+  const length = images.length; // Number of images
 
   // The nextPicture() function takes the current value of current and adds one to it. If the current :
-  // Value is equal to the length of the array minus one, then the current value is set to zero.
+  // value is equal to the length of the array minus one, then the current value is set to zero.
   // Otherwise, the current value is set to the current value plus one.
   const nextPicture = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -36,7 +37,7 @@ function Carrousel({ images }) {
       {length > 1 && (
         <img
           src={sliderVector}
-          className="left-vector"
+          className="carrousel__vector--left"
           onClick={previousPicture}
           alt="Previous"
         />
@@ -44,31 +45,36 @@ function Carrousel({ images }) {
       {length > 1 && (
         <img
           src={sliderVector}
-          className="right-vector"
+          className="carrousel__vector--right"
           onClick={nextPicture}
           alt="Next"
         />
       )}
       {images.map((slider, index) => (
         /* It is a ternary operator which checks if the index of the image is equal to the current value.
-        If so, this will make the slide active. Otherwise it will render the slide as
+        If so, this will make the slide active. Otherwise, it will render the slide as
         idle. */
         <div
-          className={index === current ? 'slide active' : 'slide'}
+          className={index === current ? 'carrousel__slide--active' : 'carrousel__slide'}
           key={`slider-${index}`}
         >
           {index === current && (
             <img
               src={slider}
               alt={`slide ${index + 1}`}
-              className="image"
+              className="carrousel__image"
             />
           )}
         </div>
       ))}
+      {/* Slide progress indicator */}
+      <span className='slide-counter'>
+        {current + 1} / {images.length}
+      </span>
     </div>
   );
 }
 
 export default Carrousel;
+
 
