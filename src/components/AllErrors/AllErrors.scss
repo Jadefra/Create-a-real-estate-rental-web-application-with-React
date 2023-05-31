@@ -9,8 +9,8 @@
         margin-bottom: 11px;
         font-size: 96px;
         color: $primary-color;
-        line-height: 143%;
         font-weight: 700;
+        line-height: 143%;
         @include desktop-breakpoint {
             margin-top: 64px;
             margin-bottom: 32px;
@@ -24,8 +24,8 @@
         margin: 0 auto;
         font-size: 18px;
         color: $primary-color;
-        font-weight: 400;
         line-height: 143%;
+        font-weight: 400;
         width: 100%;  
         white-space: nowrap;  
         @include desktop-breakpoint {
@@ -43,9 +43,9 @@
         display:block;
         margin-top: 88px;  
         margin-bottom: 88px;
-        color: $primary-color;
         font-size: 14px;
         font-weight: 400;
+        color: $primary-color;
         line-height: 143%;
         text-decoration-line: underline;
         @include desktop-breakpoint {
