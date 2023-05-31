@@ -1,6 +1,6 @@
 import React from 'react'; 
 import starEmpty from '../../assets/images/star_empty.svg';
-import starFull from '../../assets/images/star_full.svg'; // assurez-vous que c'est la bonne image
+import starFull from '../../assets/images/star_full.svg'; 
 import './Rate.scss'; 
 
 function Rate({ rating }) {
@@ -15,21 +15,19 @@ function Rate({ rating }) {
 
   return (
     <div className="rate-overall">
-      {/*Return full stars quantity*/}
       {[...Array(starSum)].map((e,i) => (
         <img
           className="star"
           key={'full-star-' + i}
-          src={starFull} // utilise l'image de l'étoile pleine
+          src={starFull} 
           alt="Full star"
         />
       ))}
-      {/*Return the amount of empty stars*/}
       {[...Array(emptyStars)].map((_, i) => (
         <img
           className="star-empty"
           key={'empty-star-' + i}
-          src={starEmpty} // utilise l'image de l'étoile vide
+          src={starEmpty} 
           alt="Empty star"
         />
       ))}
