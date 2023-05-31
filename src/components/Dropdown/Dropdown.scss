@@ -23,17 +23,17 @@
         margin-bottom: 20px;
 
         @include desktop-breakpoint {
-			margin-bottom: 31px;
-			padding-right: 108px;
 			padding-left: 108px;
+			padding-right: 108px;
+			margin-bottom: 31px;
 		}
     }
 
     &-title {
-		color: #ffffff;
 		font-size: 13px;
 		font-weight: 200;
 		line-height: 143%;
+	    	color: #ffffff;
 
 		@include desktop-breakpoint {
 			font-size: 24px;
@@ -41,18 +41,18 @@
 	}
 
     &-icon {
+	height: 18px;
         width: 18px;
-        height: 18px;
+     	margin-left: auto;
         margin-right: 6px;
-        margin-left: auto;
         transition: -webkit-transform 0.6s ease;
         transition: transform 0.6s ease;
         color: #fff, 1;
 
         @include desktop-breakpoint {
-			width: 23px;
-			height: 14px;
 			margin-right: 32px;
+			height: 14px;
+			width: 23px;	
 		}
     }
 
@@ -68,19 +68,18 @@
 
     &-text {
         padding-top: 18px;
-        padding-right: 6px;
-        padding-bottom: 18px;
+	padding-bottom: 18px;
         padding-left: 12px;
-        background: #f7f7f7;
+        padding-right: 6px;
         color: $primary-color;
-        font-size: 12px;
+        background: #f7f7f7;
         line-height: 143%;
-
+        font-size: 12px;
         @include desktop-breakpoint {
 			padding-top: 36px;
-			padding-right: 27px;
 			padding-bottom: 36px;
 			padding-left: 18px;
+			padding-right: 27px;
 			font-size: 24px;
         }
     }
