@@ -4,11 +4,9 @@ import './Carrousel.scss';
 
 function Carrousel({ images }) { 
   // Receives an array with the URLs of the images.
-  // This is a React Hook that creates a state variable called "current" and sets it to 0. It
-  // creates a function called `setCurrent` which takes a parameter called `value` and sets the
-  // `current` state variable to the passed value.
-  const [current, setCurrent] = useState(0); // Counter variable initially set to 0
-  const length = images.length; // Number of images
+  // This is a React Hook that creates a state variable called "current" and sets it to 0. 
+  const [current, setCurrent] = useState(0); 
+  const length = images.length; 
 
   // The nextPicture() function takes the current value of current and adds one to it. If the current :
   // value is equal to the length of the array minus one, then the current value is set to zero.
@@ -17,7 +15,6 @@ function Carrousel({ images }) {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
-  // The `previousPicture` function takes no parameters and returns no value.
   // It sets the current picture to the previous picture.
   // If the current picture is 0, this sets the current picture to the last picture.
   const previousPicture = () => {
