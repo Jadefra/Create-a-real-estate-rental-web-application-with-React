@@ -4,25 +4,25 @@
 
 .footer {
     &-whole {
-        height: 190px;
         margin-top: auto;
+	height: 190px;
         background-color: #000000;
+	    	text-align: center;
 		color: #ffffff;
-		text-align: center;
     }
     &-logo {
+	width: 122px;
         height: 36px;
-        width: 122px;
         margin-top: 60px;
         color: #fff, 1;
     }
     &-rights {
+	font-weight: 300;
         margin-top: 40px;
         font-size: 11px;
-        font-weight: 300;
         @include desktop-breakpoint {
-			margin-top: 31px;
 			font-size: 22px;
+			margin-top: 31px;
 		}
     }
 }
