@@ -4,7 +4,6 @@ import './Carrousel.scss';
 
 function Carrousel({ images }) { 
   // Receives an array with the URLs of the images.
-  // This is a React Hook that creates a state variable called "current" and sets it to 0. 
   const [current, setCurrent] = useState(0); 
   const length = images.length; 
 
