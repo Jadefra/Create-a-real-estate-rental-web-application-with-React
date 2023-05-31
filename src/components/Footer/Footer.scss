@@ -1,4 +1,3 @@
-// Footer.scss
 @import '../../styles/variables'; 
 @import '../../styles/mixins'; 
 
@@ -7,8 +6,8 @@
         margin-top: auto;
 	height: 190px;
         background-color: #000000;
-	    	text-align: center;
-		color: #ffffff;
+	text-align: center;
+	color: #ffffff;
     }
     &-logo {
 	width: 122px;
@@ -23,6 +22,6 @@
         @include desktop-breakpoint {
 			font-size: 22px;
 			margin-top: 31px;
-		}
+	}
     }
 }
