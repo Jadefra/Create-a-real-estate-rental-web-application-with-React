@@ -5,12 +5,9 @@ import Vector from '../../assets/images/Vector.svg';
 import './Dropdown.scss';
 
 function Dropdown({ title, content }) {
-  // The initial state
   const [dropActive, setDropActive] = useState('');
-  // The initial state of the rotation class
   const [dropRotate, setDropRotate] = useState('dropdown-icon');
 
-  // The toggle function: the dropdown by changing active state, height state and rotation state
   const openDropdown = () => {
     setDropActive(dropActive === '' ? 'active' : '');
     setDropRotate(
