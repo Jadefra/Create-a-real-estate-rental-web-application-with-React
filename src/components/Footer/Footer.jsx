@@ -1,4 +1,3 @@
-// Footer.jsx
 import React from 'react';
 import logo2 from '../../assets/images/logo2.png';
 import './Footer.scss';
