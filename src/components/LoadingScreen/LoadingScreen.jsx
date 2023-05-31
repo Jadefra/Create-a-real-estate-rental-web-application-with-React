@@ -7,7 +7,6 @@ import AllErrors from '../../components/AllErrors/AllErrors';
 import './LoadingScreen.scss';
 
 function LoadingScreen() {
-  // State variable that will be used to display an error message
   const [error, setError] = useState(false);
 
   useEffect(() => {
