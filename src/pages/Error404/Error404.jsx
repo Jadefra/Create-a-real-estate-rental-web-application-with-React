@@ -4,7 +4,6 @@ import AllErrors from '../../components/AllErrors/AllErrors';
 
 
 function AllErrors404() {
-    // The page title
     document.title = 'Kasa - 404';
 
     return (
