@@ -5,7 +5,6 @@ import Dropdown from '../../components/Dropdown/Dropdown';
 import './A-Propos.scss';
 
 function APropos() {
-  // The page title
   useEffect(() => {
     document.title = 'A Propos - Kasa';
   }, []);
@@ -39,7 +38,6 @@ function APropos() {
         className="banner apropos-banner"
         style={{ backgroundImage: `url(${aproposBanner})` }}
       />
-      {/* Loop through the aproposInput array and display each element as a Collapse */}
       {aproposInput.map((apropos, index) => (
         <Dropdown
           title={apropos.title}
