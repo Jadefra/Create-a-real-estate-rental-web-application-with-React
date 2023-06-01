@@ -10,13 +10,11 @@ import Thumb from '../../components/Thumb/Thumb';
 import './Home.scss';
 
 function Home() {
-  // The page title
   document.title = 'Accueil - Kasa';
 
   // Get data from the JSON file
   const logements = useFetch(process.env.PUBLIC_URL + '/logements.json');
 
-  // Check if the data is loading, and if so, show a loading screen
   if (logements.isLoading) {
     return <LoadingScreen />;
   }
