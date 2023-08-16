@@ -2,6 +2,9 @@
 
 https://github.com/Jadefra/Create-a-real-estate-rental-web-application-with-React/assets/91191428/a062ecdd-b4c7-444a-8b73-4f9e6cee1fee
 
+### Context ###
+The Kasa website was coded more than 10 years ago in ASP.NET with significant legacy code. The CTO therefore launched a total overhaul to move to a full stack in JavaScript with NodeJS on the back-end side, and React on the front end side. Kasa also took the opportunity to order new models from its usual designer, who is freelancing.
+
 ### Objective ###
 Start the React project and develop the whole application, React components, React Router routes, following Figma models (responsive!). And this with a quality code!
 
